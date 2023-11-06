@@ -1,7 +1,7 @@
 "use strict";
-const nome = 'Renan';
-const sobrenome = 'Aba';
-const curso = 'Typescript';
-console.log(nome);
-console.log(sobrenome);
-console.log(curso);
+const vnome = 'Renan';
+const vsobrenome = 'Aba';
+const vcurso = 'Typescript';
+console.log(vnome);
+console.log(vsobrenome);
+console.log(vcurso);

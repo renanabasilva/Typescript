@@ -1,7 +1,7 @@
-const nome = 'Renan';
-const sobrenome = 'Aba';
-const curso = 'Typescript'
+const vnome = 'Renan';
+const vsobrenome = 'Aba';
+const vcurso = 'Typescript'
 
-console.log(nome);
-console.log(sobrenome);
-console.log(curso);
+console.log(vnome);
+console.log(vsobrenome);
+console.log(vcurso);
