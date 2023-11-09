@@ -19,4 +19,16 @@ var cores;
     cores["verde"] = "#0f0";
     cores["azul"] = "#00f";
 })(cores || (cores = {}));
-console.log();
+console.log(cores.branco);
+console.log(cores['branco']);
+var tipoUsuario;
+(function (tipoUsuario) {
+    tipoUsuario[tipoUsuario["USER"] = 0] = "USER";
+    tipoUsuario[tipoUsuario["ADMIN"] = 1] = "ADMIN";
+    tipoUsuario[tipoUsuario["SUPER"] = 2] = "SUPER";
+})(tipoUsuario || (tipoUsuario = {}));
+;
+console.log(tipoUsuario.ADMIN);
+let spr = 2;
+let tp = tipoUsuario.USER;
+console.log(tp);

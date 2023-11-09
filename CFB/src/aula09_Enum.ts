@@ -25,4 +25,17 @@ enum cores {
   azul = '#00f'
 }
 
-console.log()
+console.log(cores.branco);
+console.log(cores['branco']);
+
+enum tipoUsuario {
+  USER,
+  ADMIN,
+  SUPER
+};
+
+console.log(tipoUsuario.ADMIN);
+
+let spr:tipoUsuario = 2;
+let tp:tipoUsuario = tipoUsuario.USER;
+console.log(tp);
