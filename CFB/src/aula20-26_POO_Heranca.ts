@@ -34,7 +34,7 @@ abstract class Conta {
 
   // O método Set serve para modificar algo dentro da classe.
 
-  private set saldo(saldoconta:number){
+  private set saldo(saldoconta: number) {
     this.saldoconta = saldoconta;
   }
 
@@ -52,12 +52,22 @@ abstract class Conta {
   }
 }
 
-class ContaPF extends Conta {
+interface Tributos {
+  baseCalculo: number;
+  calcularTrib(valor: number): number;
+}
+
+class ContaPF extends Conta implements Tributos {
+  baseCalculo = 10;
   cpf: number;
   constructor(titular: string, cpf: number) {
     super(titular);
     this.cpf = cpf;
     console.log(`Conta PF criada: ${this.titular}`);
+  }
+
+  calcularTrib(valor: number): number {
+    return valor * this.baseCalculo;
   }
 
   info(): void {

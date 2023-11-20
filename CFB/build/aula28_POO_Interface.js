@@ -7,6 +7,7 @@ curso1 = {
     des: "Curso de typescript",
     aula: 100,
     maxAlunos: 50,
+    iniciarCurso(t) { },
 };
 curso2 = {
     titulo: "Javascript",

@@ -38,11 +38,15 @@ class Conta {
     }
 }
 class ContaPF extends Conta {
+    baseCalculo = 10;
     cpf;
     constructor(titular, cpf) {
         super(titular);
         this.cpf = cpf;
         console.log(`Conta PF criada: ${this.titular}`);
+    }
+    calcularTrib(valor) {
+        return valor * this.baseCalculo;
     }
     info() {
         console.log(`Tipo de conta: PF`);
