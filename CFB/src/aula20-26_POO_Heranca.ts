@@ -1,6 +1,10 @@
-class Conta {
+// A classe conta serve com modelo para criação de outras classes, devido a isso ela deve ser do tipo abstract (Classe Abstrata).
+// Não é possível criar novas instâncias de classes abstratas (Não se pode criar objetos), elas apenas podem ser herdadas por outras classes.
+
+abstract class Conta {
   // Public pode ser acessado de qualquer lugar.
-  public numero: number;
+  // Ao atribuir readonly em numero, faz com que não possa ser alterado após atribuido.
+  private readonly numero: number;
   // Protected pode ser acessado pela classe pai ou pela classe filho. Não pode ser acessado externamente.
   protected titular: string;
   private saldoconta: number;
@@ -20,21 +24,30 @@ class Conta {
     console.log(`Número: ${this.numero}`);
   }
 
-  public saldo(): number {
+  // O método Get serve para se obter algo, um parâmetro ou propriedade dentro da classe.
+  // Ao utilizar o GET em um método, o transforma em uma propriedade.
+
+  public get saldo(): number {
     return parseFloat(this.saldoconta.toFixed(2));
     // return this.saldoconta.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
   }
 
+  // O método Set serve para modificar algo dentro da classe.
+
+  private set saldo(saldoconta:number){
+    this.saldoconta = saldoconta;
+  }
+
   protected deposito(valor: number) {
     if (valor < 0) return console.log("Valor inválido.");
-    this.saldoconta += valor;
+    this.saldo += valor;
   }
   protected saque(valor: number) {
     if (valor < 0) return console.log("Valor inválido.");
-    if (valor <= this.saldoconta) {
-      this.saldoconta -= valor;
+    if (valor <= this.saldo) {
+      this.saldo -= valor;
     } else {
-      console.log(`Saldo da conta insuficiente. Saldo: R$${this.saldo()}`);
+      console.log(`Saldo da conta insuficiente. Saldo: R$${this.saldo}`);
     }
   }
 }
@@ -112,5 +125,5 @@ cont1.deposito(500);
 cont1.saque(499.99);
 // cont1.saque(1001);
 console.log(
-  cont1.saldo().toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+  cont1.saldo.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
 );

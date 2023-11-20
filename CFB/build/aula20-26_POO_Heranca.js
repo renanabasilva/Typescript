@@ -15,22 +15,25 @@ class Conta {
         console.log(`Titular: ${this.titular}`);
         console.log(`Número: ${this.numero}`);
     }
-    saldo() {
+    get saldo() {
         return parseFloat(this.saldoconta.toFixed(2));
+    }
+    set saldo(saldoconta) {
+        this.saldoconta = saldoconta;
     }
     deposito(valor) {
         if (valor < 0)
             return console.log("Valor inválido.");
-        this.saldoconta += valor;
+        this.saldo += valor;
     }
     saque(valor) {
         if (valor < 0)
             return console.log("Valor inválido.");
-        if (valor <= this.saldoconta) {
-            this.saldoconta -= valor;
+        if (valor <= this.saldo) {
+            this.saldo -= valor;
         }
         else {
-            console.log(`Saldo da conta insuficiente. Saldo: R$${this.saldo()}`);
+            console.log(`Saldo da conta insuficiente. Saldo: R$${this.saldo}`);
         }
     }
 }
@@ -94,4 +97,4 @@ const cont1 = new ContaPF("Renan", 312321123 - 25);
 const cont2 = new ContaPJ("Empresa", 333444555 - 12);
 cont1.deposito(500);
 cont1.saque(499.99);
-console.log(cont1.saldo().toLocaleString("pt-BR", { style: "currency", currency: "BRL" }));
+console.log(cont1.saldo.toLocaleString("pt-BR", { style: "currency", currency: "BRL" }));
