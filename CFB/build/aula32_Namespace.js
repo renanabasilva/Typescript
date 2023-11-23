@@ -3,8 +3,10 @@ var Veiculos;
 (function (Veiculos) {
     class Carro {
         nome;
+        motor;
         constructor(nome) {
             this.nome = nome;
+            this.motor = new Motores.Motor(100);
         }
     }
     Veiculos.Carro = Carro;
@@ -27,3 +29,4 @@ var Motores;
 })(Motores || (Motores = {}));
 const carro1 = new Veiculos.Carro("Focus");
 console.log(carro1.nome);
+console.log(carro1.motor);
