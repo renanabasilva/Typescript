@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Compras com TypeScript</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+  <style>
+    .btn_lixeira, .btn_editar{
+      width: 20px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Lista de Compras com TypeScript</h1>
+    <form id="formularioItem">
+      <div class="form-group">
+        <label for="item">Item:</label>
+        <input type="text" class="form-control" id="item" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Adicionar</button>
+    </form>
+    <ul id="listaItens" class="list-group mt-3">
+      <!-- Os itens da lista serão inseridos aqui -->
+    </ul>
+  </div>
+  <button type="button" class="btn-close" aria-label="Close"></button>
+  <script src="app.js"></script>
+</body>
+</html>
