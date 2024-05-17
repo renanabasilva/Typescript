@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "dist/js",        // Diretório de saida, onde será gerado o arquivo .js após a compilação do arquivo .ts
+    "target": "ES6",            // Versão do ecmascript para qual será compilado. 
+    "noEmitOnError": true,      // Não fará a compilação se houver erros no arquivo .ts
+  },
+  "include": [
+    "app/**/*"                  // Local em que estarão os arquivos para serem compilados. No caso a pasta app, as subpastas **, e qualquer arquivo *
+  ]
+}
